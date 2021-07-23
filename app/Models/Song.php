@@ -5,20 +5,20 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Movie extends Model
+class Song extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'title',
-        'description',
+        'name',
+        'writer',
         'release_date',
-        'director',
+        'singer',
         'genre'
         
     ];
 
     public function container() {
-        return $this->belongsTo('App\Models\Movie', 'title', 'id');
+        return $this->belongsTo('App\Models\Song', 'name', 'id');
     }
 }

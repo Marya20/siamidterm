@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\MovieController;
+use App\Http\Controllers\SongController;
 use App\Http\Controllers\AuthenticationController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -23,10 +23,10 @@ Route::group(['middleware'=>'auth:api'], function(){
     Route::get('/user', [AuthenticationController::class, 'me']);
     Route::post('/logout',[AuthenticationController::class, 'logout']);
 
-    Route::post('/movies/search', [MovieController::class, 'search']);
-    Route::post('/movies', [MovieController::class, 'store']);
-    Route::get('/movies', [MovieController::class, 'index']);
-    Route::get('/movies/{movie}', [MovieController::class, 'show']);
-    Route::put('/movies/{movie}', [MovieController::class, 'update']);
-    Route::delete('/movies/{movie}', [MovieController::class, 'destroy']);
+    Route::post('/songs/search', [SongController::class, 'search']);
+    Route::post('/songs', [SongController::class, 'store']);
+    Route::get('/songs', [SongController::class, 'index']);
+    Route::get('/songs/{song}', [SongController::class, 'show']);
+    Route::put('/songs/{song}', [SongController::class, 'update']);
+    Route::delete('/Songs/{song}', [SongController::class, 'destroy']);
 });
